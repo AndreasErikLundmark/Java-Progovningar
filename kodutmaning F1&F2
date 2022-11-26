@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Main { 
+
+    public static int ageShoe (int yearPresent, int shoeSize, int yearBirth) {                      //metod "ageShoe för uträkningen
+
+        return (((shoeSize * 5) + 50) * 20 - 1000 + yearPresent - yearBirth);
+    }
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        int yearPresent;
+        int shoeSize;
+        int yearBirth;
+
+        System.out.println("Ange vilket år det är i år, t.ex. 2018: ");
+        yearPresent = input.nextInt();
+
+        System.out.println("Ange din skostorlek, t.ex. 42: ");
+        shoeSize = input.nextInt();
+
+        System.out.println("Ange ditt födelseår, t.ex. 1964: ");
+        yearBirth = input.nextInt();
+
+
+
+        System.out.println("Nu bör du kunna se ditt skonummer och din nuvarande ålder: " + ageShoe(yearPresent, shoeSize, yearBirth));      // anrop metod ageShoe
+    };
+
+}
