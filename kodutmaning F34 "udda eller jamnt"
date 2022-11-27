@@ -1,0 +1,36 @@
+/** Skriv ett program som läser in ett heltal från användaren och
+ * kontrollerar om värdet är udda eller jämnt.
+ * När värdet är jämnt ska följande utskrift visas: “Det inmatade värdet är jämnt.”
+ * När värdet är udda ska istället följande utskrift visas: “Det inmatade värdet är udda.”
+ * */
+
+import java.util.Scanner;
+
+public class F3punkt4 {
+
+    public static boolean evenOdd ( int a ){
+
+        boolean result;
+
+        if ( a % 2 == 0){
+
+           result = true;
+        }else{
+            result = false;
+        }
+        return result;
+    }
+
+    public static void main ( String [] args ){
+
+        System.out.print("Ange ett heltalsvärde: ");
+        Scanner input = new Scanner(System.in);
+        int a = input.nextInt();
+
+        if (evenOdd(a)){
+            System.out.print( "Det inmatade värdet " + a + " är jämnt.");
+        }else{
+            System.out.print( "Det inmatade värdet " + a + " är udda.");
+        }
+    }
+}
