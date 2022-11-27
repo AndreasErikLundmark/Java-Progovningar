@@ -1,0 +1,42 @@
+/** Skriv ett program som läser in ett heltal från användaren och kontrollerar
+ * om värdet är jämnt delbart med 3.
+ * När värdet är jämnt delbart med 3 ska följande utskrift visas
+ * (t.ex. när man matar in värdet 3): “Det inmatade värdet 3 är jämnt delbart med 3.”
+ * När värdet inte är jämnt delbart med 3 ska istället följande utskrift visas
+ * (t.ex. när man matar in värdet 7): “Det inmatade värdet 7 är inte jämnt delbart med 3.”
+ */
+
+
+import java.util.Scanner;
+
+public class F3punkt3 {
+
+    public static boolean calc ( int a ){       //metod för uträkning om delbarheten
+
+        boolean result;
+
+        if ( a % 3 == 0){
+
+            result = true;
+        }else{
+
+            result = false;
+        }
+        return result;
+
+    }
+
+    public static void main( String[]args ){
+        Scanner input = new Scanner(System.in);
+        System.out.print( "Ange ett heltalsvärde: " );
+        int a = input.nextInt();
+
+        if (calc(a)){
+            System.out.print("Det inmatade värdet " + a + " är jämnt delbart med 3." );
+        }else{
+            System.out.print("Det inmatade värdet " + a + " är inte jämnt delbart med 3." ) ;
+
+        }
+
+    }
+}
