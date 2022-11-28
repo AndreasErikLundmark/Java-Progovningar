@@ -1,0 +1,80 @@
+/**Skriv ett kommandostyrt Javaprogram som konverterar värden mellan enheterna Celsius och Fahrenheit.
+ Programmet ska ha en program-meny där användaren väljer vad som ska utföras. Programmenyn ska se ut på följande vis:
+
+ Program-meny:
+ 1. Konvertera från Fahrenheit till Celsius
+ 2. Konvertera från Celsius till Fahrenheit
+ 3. Avsluta programmet
+ Ange ditt val (1, 2 eller 3):
+
+ Om användaren anger 1 eller 2 så ska programmet fråga efter värdet som ska konverteras.
+ När användaren angett önskat värde så ska programmet räkna ut och skriva ut motsvarande antal grader i den andra enheten.
+
+ Därefter ska programmenyn visas igen och användaren informeras att göra ett nytt val.
+ Användaren ska kunna utföra konverteringar ända tills att användaren anger 3 för att avsluta programmet.
+ Då ska programmet skriva Välkommen åter! till användaren.
+
+ Programmet ska hantera ogiltiga användarinmatningar genom att låta användaren ange ett nytt val.
+
+ Grader Fahrenheit och Celsius kan räknas ut enligt:
+ fahrenheit = celsius * 1.8 + 32
+ celsius = ( fahrenheit - 32 ) / 1.8
+ */
+
+import java.util.Scanner;
+
+
+public class Main {
+
+    // metod uträkning fahrenheit till celsius
+    public static double fahrenheitToCelsius(double fahrenheit) {
+        double celsius;
+        return celsius = (fahrenheit - 32) / 1.8;
+    }
+
+    // metod uträkning celcius till fahrenheit
+    public static double celsiusToFahrenheit(double celsius) {
+        double fahrenheit;
+        return fahrenheit = celsius * 1.8 + 32;
+    }
+
+    // metod skriva ut valmöjligheter.
+    public static void menu() {
+        System.out.println("Program-meny:");
+        System.out.println("1. Konvertera från Fahrenheit till Celsius ");
+        System.out.println("2. Konvertera från Celsius till Fahrenheit ");
+        System.out.println("3. Avsluta programmet");
+        System.out.println("Ange ditt val (1, 2 eller 3):");
+    }
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int choose = 0;
+
+        while (choose != 3) { // loopen ska avslutas om användaren trycker på 3. 
+
+            menu();
+
+            choose = input.nextInt();
+            switch (choose) {     // switch på valmöjligheterna enligt "menu"
+
+                case 1:
+                    System.out.println("Ange antal grader i Fahrenheit: ");
+                    double fahrenheit = input.nextDouble();
+                    System.out.println("Celsius: " + fahrenheitToCelsius(fahrenheit) + "\n");
+                    break;
+                case 2:
+                    System.out.println("Ange antal grader i Celsius: ");
+                    double celsius = input.nextDouble();
+                    System.out.println("Fahrenheit: " + celsiusToFahrenheit(celsius) + "\n");
+                    break;
+                case 3:
+                    System.out.println("Välkommen åter!");
+                    break;
+                default:                                                    // om man trycker på något annat tecken än 1,2,eller 3. 
+                    System.out.println("Ogiltigt val. Försök igen!\n");
+                    break;
+            }
+        }
+    }
+}
